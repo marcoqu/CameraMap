@@ -1,0 +1,32 @@
+{
+  "name": "cameramap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.ts",
+  "dependencies": {
+    "@turf/bbox": "^6.3.0",
+    "@turf/bbox-polygon": "^6.3.0",
+    "@turf/bearing": "^6.3.0",
+    "@turf/circle": "^6.3.0",
+    "@turf/distance": "^6.3.0",
+    "@turf/transform-rotate": "^6.3.0",
+    "mapbox-gl": "^2.1.1",
+    "threebox": "file:..\\..\\..\\2018 - Polimi\\Testori\\threebox"
+  },
+  "devDependencies": {
+    "@types/mapbox-gl": "^2.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3"
+  },
+  "scripts": {
+    "build": "rd /s /q dist&rd /s /q types&tsc",
+    "lint": "eslint . --ext .ts ./src/js"
+  },
+  "author": "",
+  "license": "ISC"
+}
