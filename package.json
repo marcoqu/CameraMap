@@ -11,7 +11,7 @@
     "@turf/distance": "^6.3.0",
     "@turf/transform-rotate": "^6.3.0",
     "mapbox-gl": "^2.1.1",
-    "threebox": "file:..\\..\\..\\2018 - Polimi\\Testori\\threebox"
+    "threebox": "github:marcoqu/ThreeBox"
   },
   "devDependencies": {
     "@types/mapbox-gl": "^2.1.1",
