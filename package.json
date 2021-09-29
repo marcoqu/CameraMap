@@ -11,9 +11,9 @@
     "@turf/circle": "^6.3.0",
     "@turf/distance": "^6.3.0",
     "@turf/transform-rotate": "^6.3.0",
-    "mapbox-gl": "^2.1.1",
-    "threebox": "github:marcoqu/ThreeBox",
-    "@types/mapbox-gl": "^1.13.0"
+    "@types/mapbox-gl": "^1.13.0",
+    "mapbox-gl": "^1.13.0",
+    "threebox": "github:marcoqu/ThreeBox"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.18.0",
