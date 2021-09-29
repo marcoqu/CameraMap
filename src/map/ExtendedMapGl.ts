@@ -1,6 +1,6 @@
 import { Map, LngLatLike, CameraOptions, AnimationOptions, CameraForBoundsOptions } from 'mapbox-gl';
 
-interface ExtendedMapGL extends Map {
+export interface ExtendedMapGL extends Map {
     transform: {
         width: number;
         height: number;
