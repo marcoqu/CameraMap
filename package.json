@@ -2,7 +2,8 @@
   "name": "cameramap",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.ts",
+  "main": "dist/main.js",
+  "types": "types/main.d.ts",
   "dependencies": {
     "@turf/bbox": "^6.3.0",
     "@turf/bbox-polygon": "^6.3.0",
