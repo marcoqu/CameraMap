@@ -15,10 +15,16 @@ export class CameraMap {
         return this._mapGL;
     }
     async ready() {
+        if (this._mapGL.loaded())
+            return;
         if (this._mapGL.isStyleLoaded())
             return;
         return new Promise((resolve, reject) => {
             this._mapGL.once('styledata', async () => {
+                await this.ready();
+                resolve();
+            });
+            this._mapGL.once('load', async () => {
                 await this.ready();
                 resolve();
             });
