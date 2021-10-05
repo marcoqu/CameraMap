@@ -6,7 +6,7 @@ import turfBearing from '@turf/bearing';
 import turfDistance from '@turf/distance';
 import { CAMERA_FOV, Projection } from 'threebox';
 
-import { FlyToOptions, Map as MapGL, LngLat } from 'mapbox-gl';
+import { FlyToOptions, Map as MapGL, LngLat, MapboxOptions } from 'mapbox-gl';
 import { CameraFramingData, CameraPosition, coord2, coord3 } from './Camera';
 import { ExtendedMapGL } from './ExtendedMapGl';
 import { clamp, toDegrees, wrap } from '../utils/math';
@@ -19,18 +19,8 @@ export class CameraMap {
         return this._mapGL;
     }
 
-    public constructor(containerElement: HTMLElement, mapToken: string, mapStyle: string) {
-        this._mapGL = new MapGL({
-            container: containerElement,
-            style: mapStyle,
-            center: [9.191383, 45.464211],
-            zoom: 11,
-            maxZoom: 20,
-            minZoom: 1,
-            interactive: false,
-            refreshExpiredTiles: false,
-            accessToken: mapToken,
-        }) as ExtendedMapGL;
+    public constructor(mapOptions: MapboxOptions) {
+        this._mapGL = new MapGL(mapOptions) as ExtendedMapGL;
     }
 
     public async ready(): Promise<void> {
