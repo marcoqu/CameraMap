@@ -20,15 +20,17 @@ export class CameraMap {
         if (this._mapGL.isStyleLoaded())
             return;
         return new Promise((resolve, reject) => {
-            this._mapGL.once('styledata', async () => {
+            const onDataEvent = async () => {
                 await this.ready();
                 resolve();
-            });
-            this._mapGL.once('load', async () => {
-                await this.ready();
-                resolve();
-            });
-            this._mapGL.once('error', () => reject());
+            };
+            const onError = () => {
+                console.error('Map Loading error');
+                reject();
+            };
+            this._mapGL.once('styledata', onDataEvent);
+            this._mapGL.once('load', onDataEvent);
+            this._mapGL.once('error', onError);
         });
     }
     setStyle(styleUrl) {
