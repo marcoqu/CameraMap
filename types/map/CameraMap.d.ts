@@ -1,12 +1,12 @@
 import turfBearing from '@turf/bearing';
-import { FlyToOptions, LngLat } from 'mapbox-gl';
+import { FlyToOptions, LngLat, MapboxOptions } from 'mapbox-gl';
 import { CameraFramingData, CameraPosition, coord3 } from './Camera';
 import { ExtendedMapGL } from './ExtendedMapGl';
 export declare class CameraMap {
     private _mapGL;
     private _mapStyle;
     get mapGL(): ExtendedMapGL;
-    constructor(containerElement: HTMLElement, mapToken: string, mapStyle: string);
+    constructor(mapOptions: MapboxOptions);
     ready(): Promise<void>;
     setStyle(styleUrl?: string): void;
     getStyle(): string | undefined;

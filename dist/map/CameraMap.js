@@ -8,18 +8,8 @@ import { CAMERA_FOV, Projection } from 'threebox';
 import { Map as MapGL, LngLat } from 'mapbox-gl';
 import { clamp, toDegrees, wrap } from '../utils/math';
 export class CameraMap {
-    constructor(containerElement, mapToken, mapStyle) {
-        this._mapGL = new MapGL({
-            container: containerElement,
-            style: mapStyle,
-            center: [9.191383, 45.464211],
-            zoom: 11,
-            maxZoom: 20,
-            minZoom: 1,
-            interactive: false,
-            refreshExpiredTiles: false,
-            accessToken: mapToken,
-        });
+    constructor(mapOptions) {
+        this._mapGL = new MapGL(mapOptions);
     }
     get mapGL() {
         return this._mapGL;
